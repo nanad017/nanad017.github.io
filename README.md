@@ -1,2 +1,1 @@
-# nanad017.github.io
-just my blog
+just a blog
