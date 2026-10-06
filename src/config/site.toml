@@ -154,9 +154,9 @@ href = "/about"
 
 [config.home.quote]
 text = [
-  "Build quietly,",
-  "write clearly,",
-  "and keep learning in public.",
+  "Have fun,",
+  "Have clearly,",
+  "and keep going.",
 ]
 
 [config.home.intro]
