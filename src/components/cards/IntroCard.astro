@@ -14,13 +14,7 @@ const { intro, quote } = Astro.props as { intro: Intro; quote?: Quote };
 
 <article class="glass-card intro-card">
   <div class="intro-copy">
-    {
-      quote && (
-        <div class="quote-mark" aria-hidden="true">
-          "
-        </div>
-      )
-    }
+    {quote && <div class="quote-mark" aria-hidden="true" />}
     <h2>
       <span aria-hidden="true">Hi,</span>
       {intro.title.replace(intro.name, '')}<em>{intro.name}</em>

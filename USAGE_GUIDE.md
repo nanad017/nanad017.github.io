@@ -353,3 +353,9 @@ bun run preview
 | `public/`       | Tài nguyên tĩnh công khai. Các file bên trong được chép nguyên trạng sang `dist/`; ví dụ `public/images/avatar.webp` sẽ có URL `/images/avatar.webp`. Không đặt thông tin nhạy cảm ở đây. |
 | `scripts/`      | Các script hỗ trợ phát triển, chẳng hạn tạo file nội dung mới và tạo subset font cho site. Được gọi qua các lệnh `bun run ...` trong `package.json`.                                      |
 | `src/`          | Mã nguồn chính của blog: component, layout, CSS, route, dữ liệu cấu hình, nội dung Markdown/MDX, schema và các tích hợp Navfolio. Astro xử lý thư mục này để tạo website.                 |
+
+Đổi chữ/link/màu có sẵn → site.toml
+Đổi một khối trên giao diện → components/
+Đổi vị trí các khối → pages/index.astro hoặc layout/
+Đổi CSS chi tiết → styles/
+Viết bài → content/

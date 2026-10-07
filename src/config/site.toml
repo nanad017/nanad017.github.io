@@ -14,7 +14,7 @@ palette = "rose-soft"
 # 原生 UI 语言。可用值：en、zh-CN、zh-TW。未知值会回退到 en。
 lang = "en"
 
-[config.fonts]
+[config.fonts] 
 # 英文与代码感 UI 字体
 en = "Maple Mono"
 code = "Monaco"
@@ -160,12 +160,11 @@ text = [
 ]
 
 [config.home.intro]
-title = "hello, this is nanad017"
+title = "hello, this is nanad017 "
 name = "nanad017"
 body = [
-  "This is a personal blog for notes, projects, and small web experiments.",
-  "I use this space to collect what I learn, what I build, and what I want to revisit later.",
-  "The site is built with Astro and the Navfolio template.",
+  "Nice to meet you, and thanks for stopping by!",
+  "This is my little corner where I jot down what I learn and find interesting.",
 ]
 
 [config.home.latest]
@@ -267,21 +266,19 @@ tooltip = ""
 copy = false
 
 [[config.home.doing]]
-text = "Setting up a personal Astro blog"
+text = "Learning about REV"
 mark = "01"
 
 [[config.home.doing]]
-text = "Writing reusable notes for future projects"
+text = "Learning Chinese"
 mark = "02"
 
 [[config.home.doing]]
-text = "Improving static-site publishing workflow"
+text = "Learning English"
 mark = "03"
 
 [[config.home.doing]]
-text = "Collecting useful developer resources"
+text = "Seeking a suitable path"
 mark = "04"
 
-[[config.home.doing]]
-text = "Exploring small open-source ideas"
-mark = "05"
+
