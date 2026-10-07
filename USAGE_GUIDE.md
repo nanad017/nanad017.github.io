@@ -312,3 +312,44 @@ bun run preview
 - [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md): giải thích cấu trúc và vai trò của từng phần.
 - `README.md`: tài liệu gốc của Navfolio.
 - `CHANGELOG.md`: lịch sử thay đổi của template.
+
+| Tệp                    | Chức năng                                                                                                                                                                             |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.editorconfig`        | Chuẩn hoá cách trình soạn thảo lưu mã: UTF-8, xuống dòng LF, thụt lề 2 dấu cách, xoá khoảng trắng cuối dòng.                                                                          |
+| `.gitignore`           | Bảo Git không theo dõi các tệp/thư mục sinh tự động hoặc riêng tư như `node_modules/`, `dist/`, `.astro/`, `.venv/`, `.env`, cache font và dữ liệu Friend Circle.                     |
+| `.gitmodules`          | Khai báo `src/docs` là Git submodule, lấy nội dung từ kho `astro-navfolio-docs`.                                                                                                      |
+| `.npmrc`               | Đặt npm registry thành mirror `https://registry.npmmirror.com` khi cài package.                                                                                                       |
+| `.nvmrc`               | Chỉ định phiên bản Node.js nên dùng: `22.12.0`.                                                                                                                                       |
+| `.prettierignore`      | Loại trừ các tệp build, dependency, lockfile, favicon và nội dung Markdown/MDX khỏi Prettier. Markdown/MDX bị loại trừ để giữ nguyên kiểu dấu nháy trong frontmatter do tác giả chọn. |
+| `.prettierrc`          | Quy tắc định dạng bằng Prettier: 2 spaces, dấu chấm phẩy, nháy đơn, tối đa 100 ký tự/dòng và hỗ trợ định dạng `.astro`.                                                               |
+| `AGENT.md`             | Hướng dẫn cho AI agent hoặc người bảo trì: kiến trúc Navfolio, phạm vi các package, nguyên tắc sửa đổi và lệnh kiểm tra. Không ảnh hưởng trực tiếp tới website khi build.             |
+| `astro.config.mjs`     | Cấu hình trung tâm của Astro: đọc URL từ `site.toml`/biến môi trường, xử lý base path cho GitHub Pages, bật MDX, sitemap, Tailwind, Markdown plugin và ánh xạ runtime của Navfolio.   |
+| `bun.lock`             | Lockfile của Bun: khoá chính xác phiên bản và nguồn dependency để máy local/CI cài cùng một bộ thư viện. Không nên sửa tay.                                                           |
+| `CHANGELOG.md`         | Nhật ký thay đổi theo phiên bản; hiện ghi các cập nhật của v0.1.0 và v0.2.0.                                                                                                          |
+| `CONTRIBUTING.md`      | Hướng dẫn đóng góp cho Navfolio: quy tắc tạo PR, kiểm tra local, nơi nên đặt thay đổi và quy trình với docs submodule.                                                                |
+| `ec.config.mjs`        | Cấu hình Expressive Code cho khối mã trong Markdown: theme sáng/tối, số dòng, xuống dòng, vùng code thu gọn, màu sắc và kiểu khung.                                                   |
+| `eslint.config.js`     | Cấu hình ESLint, hiện tập trung lint TypeScript/TSX, dùng `tsconfig.json` và báo lỗi khi dùng API TypeScript đã deprecated.                                                           |
+| `LICENSE`              | Giấy phép MIT: cho phép sử dụng, sửa, phân phối và bán lại phần mềm, với điều kiện giữ thông báo bản quyền và miễn trừ bảo hành.                                                      |
+| `navfolio.config.ts`   | Bật và cấu hình các module Navfolio: Projects, Vibe, Media, Pages và Markdown nâng cao (code block, toán học, Mermaid, bảng responsive…).                                             |
+| `package.json`         | Manifest dự án: tên, phiên bản, yêu cầu Node, scripts (`dev`, `build`, `lint`, tạo bài viết…), dependencies và devDependencies.                                                       |
+| `pagefind.yml`         | Cấu hình Pagefind tạo chỉ mục tìm kiếm tĩnh từ thư mục `dist`, chỉ tìm nội dung trong thẻ `main`, dùng tiếng Trung làm ngôn ngữ mặc định và bỏ qua vùng có `data-pagefind-ignore`.    |
+| `PROJECT_STRUCTURE.md` | Tài liệu tiếng Việt giải thích cấu trúc thư mục, luồng build/deploy và các vị trí thường chỉnh như `src/config/site.toml`, `src/content/`, `public/`.                                 |
+| `README.en.md`         | Tài liệu giới thiệu và hướng dẫn sử dụng Navfolio bằng tiếng Anh.                                                                                                                     |
+| `README.md`            | Tài liệu giới thiệu và hướng dẫn sử dụng Navfolio bằng tiếng Trung, gồm cài đặt, cấu hình, nội dung, routes, search và comments.                                                      |
+| `tsconfig.json`        | Cấu hình TypeScript: kế thừa chế độ strict của Astro, kiểm tra toàn bộ mã nguồn và loại trừ `dist/`.                                                                                  |
+| `USAGE_GUIDE.md`       | Hướng dẫn tiếng Việt thực hành cho blog này: chạy local, tạo bài viết/dự án/vibe/media, thêm ảnh, đổi giao diện, build và deploy GitHub Pages.                                        |
+| `vercel.json`          | Cấu hình deploy Vercel: tạo Python virtual environment, cài FontTools/Brotli và Bun dependencies, cập nhật submodule, build docs rồi xuất website vào `dist/`.                        |
+
+| Thư mục         | Chức năng                                                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `.agents/`      | Lưu ngữ cảnh, quy ước thiết kế và workflow dành cho AI agent/bảo trì dự án. Không được đưa vào website khi build.                                                                         |
+| `.astro/`       | Cache và các TypeScript type do Astro tự sinh trong lúc chạy/build. Có thể xoá rồi tạo lại; không cần commit.                                                                             |
+| `.github/`      | Cấu hình dành cho GitHub, thường gồm GitHub Actions workflow để build/deploy lên GitHub Pages, issue/PR templates nếu có.                                                                 |
+| `.husky/`       | Git hooks. Trong dự án này hỗ trợ chạy kiểm tra tự động trước những thao tác Git như commit.                                                                                              |
+| `.venv/`        | Python virtual environment cục bộ. Dùng để cài `fonttools` và `brotli`, cần cho script tạo font subset khi production build. Không commit.                                                |
+| `.vscode/`      | Thiết lập workspace của Visual Studio Code, ví dụ extension gợi ý, cấu hình editor hoặc task. Chỉ ảnh hưởng người dùng VS Code.                                                           |
+| `dist/`         | Website đã build sẵn: HTML/CSS/JS, ảnh tối ưu và chỉ mục tìm kiếm Pagefind. Đây là thư mục được deploy, nhưng có thể tạo lại bằng `bun run build`, nên không commit.                      |
+| `node_modules/` | Toàn bộ dependency JavaScript/TypeScript đã được Bun cài từ `package.json` và `bun.lock`. Không sửa trực tiếp, không commit; tạo lại bằng `bun install`.                                  |
+| `public/`       | Tài nguyên tĩnh công khai. Các file bên trong được chép nguyên trạng sang `dist/`; ví dụ `public/images/avatar.webp` sẽ có URL `/images/avatar.webp`. Không đặt thông tin nhạy cảm ở đây. |
+| `scripts/`      | Các script hỗ trợ phát triển, chẳng hạn tạo file nội dung mới và tạo subset font cho site. Được gọi qua các lệnh `bun run ...` trong `package.json`.                                      |
+| `src/`          | Mã nguồn chính của blog: component, layout, CSS, route, dữ liệu cấu hình, nội dung Markdown/MDX, schema và các tích hợp Navfolio. Astro xử lý thư mục này để tạo website.                 |
