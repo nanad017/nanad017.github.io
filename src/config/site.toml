@@ -124,7 +124,7 @@ role = "Personal blog"
 email = "nanad017@users.noreply.github.com"
 website = "https://nanad017.github.io/"
 github = "https://github.com/nanad017"
-avatar = "/images/logo-thin.webp"
+avatar = "/images/avatar.webp"
 
 [[config.topNav.links]]
 label = "Home"
