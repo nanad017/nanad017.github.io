@@ -124,7 +124,7 @@ role = "Personal blog"
 email = "nanad017@users.noreply.github.com"
 website = "https://nanad017.github.io/"
 github = "https://github.com/nanad017"
-avatar = "/images/avatar.webp"
+avatar = "/images/avatar.jpg"
 
 [[config.topNav.links]]
 label = "Home"
@@ -280,5 +280,4 @@ mark = "03"
 [[config.home.doing]]
 text = "Seeking a suitable path"
 mark = "04"
-
 
